@@ -15,7 +15,6 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -34,5 +33,42 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-embed-video",
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-prismjs",
+          "gatsby-remark-responsive-iframe",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              linkImagesToOriginal: false,
+            }
+          },
+          "gatsby-remark-images-medium-zoom",
+          {
+            resolve: `gatsby-remark-emojis`,
+            options: {
+              active: true,
+              class: 'emoji-icon',
+              escapeCharacter: '#',
+              size: 64,
+              styles: {
+                display: 'inline',
+                margin: '0',
+                'margin-top': '1px',
+                position: 'relative',
+                top: '5px',
+                width: '25px'
+              }
+            }
+          },
+        ]
+      }
+    }
   ],
 };
