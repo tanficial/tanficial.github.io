@@ -4,6 +4,7 @@ module.exports = {
     title: "tanficial-blog",
   },
   plugins: [
+    "gatsby-plugin-offline",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
