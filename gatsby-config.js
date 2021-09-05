@@ -15,13 +15,13 @@ module.exports = {
         icon: `${__dirname}/static/favicon.png`,
       },
     },
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-typography",
       options: {
         pathToConfigModule: `${__dirname}/src/utils/typography`,
       },
     },
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
@@ -50,6 +50,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
+              maxWidth: 720,
               linkImagesToOriginal: false,
             }
           },
