@@ -12,10 +12,16 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "static/favicon.png",
+        icon: `${__dirname}/static/favicon.png`,
       },
     },
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: `${__dirname}/src/utils/typography`,
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
