@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby"
 import styled, { css } from "styled-components";
 import { VscMenu, VscChromeClose } from "react-icons/vsc"
+import Headroom from "headroom.js"
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -19,7 +20,18 @@ const StyledHeader = styled.header`
     padding: 0;
     border: none;
     text-align: left;
-      border-bottom: 1px solid var(--color-card);
+    border-bottom: 1px solid var(--color-card);
+    transition: transform 300ms ease-in-out;
+
+    &.headroom--unpinned {
+      transform: translateY(-100%);
+      nav {
+        transform: translateY(-100%)!important;
+      }
+    }
+    &.headroom--pinned {
+      transform: translateY(0);
+    }
   }
 `
 
@@ -103,6 +115,8 @@ const ButtonsWrapper = styled.div`
 
 const Header = ({ curCategory }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const refHeader = useRef(null);
+  const headroom = useRef(null);
   const data = useStaticQuery(graphql`
   query {
     allMarkdownRemark {
@@ -116,11 +130,20 @@ const Header = ({ curCategory }) => {
     }
   }
   `)
+
+  useEffect(() => {
+    headroom.current = new Headroom(refHeader.current);
+    headroom.current.init();
+    return () => {
+      headroom.current.destroy();
+    };
+  }, []);
+
   const categories = data.allMarkdownRemark.edges
     .map(edge => edge.node.frontmatter.category)
     .filter((category, index, categories) => categories.indexOf(category) === index);
   return (
-    <StyledHeader>
+    <StyledHeader ref={refHeader}>
       <HeaderWrapper>
         <h1><Link to="/">Tanficial</Link></h1>
         <ButtonsWrapper>

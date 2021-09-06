@@ -6404,6 +6404,11 @@ hastscript@^6.0.0:
     property-information "^5.0.0"
     space-separated-tokens "^1.0.0"
 
+headroom.js@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.12.0.tgz#e09b466b18d22457f2023fb946ff620e47a5c205"
+  integrity sha512-iXnAafUm3FdzfJ91uixLws2hkKI1jC8bAKK/pt7XYr8Ie1jO7xbK48Ycpl9tUPyBgkzuj1p/PhJS0fy4E/5anA==
+
 hicat@^0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/hicat/-/hicat-0.8.0.tgz#20cd71f58aaf1bd84d52e54f1aeea0c90fa74251"
