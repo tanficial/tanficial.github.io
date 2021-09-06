@@ -4,7 +4,13 @@ import styled from "styled-components";
 const StyledFooter = styled.footer`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-card);
+    text-align: center;
     div {
         display: flex;
         align-items: center;

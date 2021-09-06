@@ -38,7 +38,7 @@ const PostCard = ({ slug, frontmatter }) => {
 const PostList = ({ data, category }) => {
     return (
         <div>
-            <h1>{category ? category : "전체 포스팅"}</h1>
+            <h1 style={{ paddingLeft: "16px" }}>{category ? category : "전체 포스팅"}</h1>
             {
                 data.map(edge => <PostCard key={edge.node.id} slug={edge.node.fields.slug} frontmatter={edge.node.frontmatter} />)
             }

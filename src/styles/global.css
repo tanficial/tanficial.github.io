@@ -1,4 +1,8 @@
 body {
+    --color-bg: #222831;
+    --color-card: #393e46;
+    --color-high: #00adb5;
+    --color-text: #eeeeee;
     margin: 0;
     padding: 0;
 }
@@ -8,14 +12,17 @@ a {
     color: inherit;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 blockquote {
     /* 추후 작성 */
     color: inherit;
+    border-color: var(--color-high);
 }
-/* https://colorhunt.co/palette/222831393e4600adb5eeeeee */
-:root{
-    --color-bg: #222831;
-    --color-card: #393e46;
-    --color-high: #00adb5;
-    --color-text: #eeeeee;
+
+img {
+    display: block;
+    margin: 0 auto;
 }

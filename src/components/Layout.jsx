@@ -23,22 +23,18 @@ const StyledLayout = styled.div`
   }
 
   main {
-    max-width: 960px;
+    max-width: 720px;
     width:100%;
     margin: 0 auto;
   }
 
   footer {
     clear: both;
-    height: 100px;
-    border-top: 1px solid var(--color-card);
-    box-sizing: border-box;
-    background-color: var(--color-bg);
     position: relative;
     z-index: 2;
   }
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1116px) {
     header {
       clear: both;
     }
@@ -53,17 +49,17 @@ const StyledLayout = styled.div`
 `
 
 const Layout = ({ children, category }) => {
-    return (
-        <StyledLayout>
-            <Header curCategory={category} />
-            <div>
-                <main>
-                    {children}
-                </main>
-            </div>
-            <Footer />
-        </StyledLayout>
-    )
+  return (
+    <StyledLayout>
+      <Header curCategory={category} />
+      <div>
+        <main>
+          {children}
+        </main>
+      </div>
+      <Footer />
+    </StyledLayout>
+  )
 }
 
 export default Layout

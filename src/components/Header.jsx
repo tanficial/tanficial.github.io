@@ -4,80 +4,88 @@ import styled, { css } from "styled-components";
 import { VscMenu, VscChromeClose } from "react-icons/vsc"
 
 const StyledHeader = styled.header`
-  padding: 30px 30px;
-  text-align: center;
-  width: 280px;
-  box-sizing: border-box;
-  border-right: 1px solid var(--color-card);
-  background-color: var(--color-bg);
   position: fixed;
+  box-sizing: border-box;
+  width: 280px;
   height: 100vh;
+  padding: 30px 30px 0;
+  background-color: var(--color-bg);
+  border-right: 1px solid var(--color-card);
+  text-align: center;
 
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1116px) {
     width: 100%;
     height: fit-content;
-    text-align: right;
-    padding-bottom: 5px;
+    padding: 0;
     border: none;
+    text-align: left;
+      border-bottom: 1px solid var(--color-card);
   }
 `
 
 const Nav = styled.nav`
   height: 0;
+  transition: transform 300ms ease-in-out;
   ul {
+    width: fit-content;
+    margin: 0 auto;
     padding: 0;
-    font-size: 1.3rem;
-    border-top: 2px solid var(--color-card);
-    transition: opacity 300ms ease-in-out;
-    text-align: left;
-    padding-left: 30px;
     padding-top: 20px;
+    font-size: 1.3rem;
   }
   li {
     list-style: none;
+    width: fit-content;
     padding: 0;
-    margin-bottom: 10px;
   }
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1116px) {
+      position: absolute;
       width: 100%;
       height: fit-content;
+      background-color: var(--color-bg);
       border-bottom: 1px solid var(--color-card);
-      ul {
-        text-align: right;
-        opacity: 0;
-        height: 0;
+      transform: translateY(-100%);
+      z-index: -1;
+
+      display: flex;
+      justify-content: flex-end;
+      *{
+        z-index: -1;
+      }
+
+      ul{
+        padding: 10px 20px;
         margin: 0;
-        padding: 0;
-        border: none;
       }
-      li {
-        visibility: hidden;
-      }
+
       ${props => props.isMenuOpened && css`
-      ul {
-        opacity: 1;
-        height: fit-content;
-      }
-      li {
-        visibility: visible;
-        margin: 10px 0;
-      }
-    `}
+        transform: translateY(0);
+      `}
     }
 `
 
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
-  
+  padding-bottom: 20px;
+  background-color: var(--color-bg);
+  border-bottom: 2px solid var(--color-card);
+  z-index: 1;
+  *{
+    z-index: 1;
+  }
   h1 {
     margin: 0;
   }
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1116px) {
     display: flex;
     justify-content: center;
-  justify-content: space-between;
+    justify-content: space-between;
+    padding: 20px;
+    border: none;
+    h1{
+      font-size: 1.5rem;
+    }
   }
 `
 
@@ -85,7 +93,7 @@ const ButtonsWrapper = styled.div`
   display: none;
   align-items: center;
   color: white;
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: 1116px) {
     display: flex;
     > * {
       cursor: pointer;

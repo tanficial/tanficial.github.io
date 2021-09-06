@@ -19,14 +19,7 @@ function Post({ data }) { // this prop(data) will be injected by the GraphQL que
         <p style={{ margin: "10px 0", textAlign: "left" }}>{frontmatter.date}</p>
       </div>
       {/* 포스트 본문 */}
-      <div
-        id="post_body"
-        className="markdown-body"
-        style={{
-          color: "var(--color-text)",
-        }}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }
