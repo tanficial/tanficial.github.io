@@ -15,8 +15,11 @@ function Post({ data }) { // this prop(data) will be injected by the GraphQL que
     <Layout category={frontmatter.category}>
       {/* frontmatter 정보 */}
       <div id="post_header" style={postHeadStyle}>
-        <h1 style={{ fontSize: "2rem", margin: "0" }}>{frontmatter.title}</h1>
-        <p style={{ margin: "10px 0", textAlign: "left" }}>{frontmatter.date}</p>
+        <h1 style={{ fontSize: "1.8rem", margin: "0", lineHeight: "36px" }}>{frontmatter.title}</h1>
+        <p style={{ margin: "10px 0", textAlign: "left" }}>
+          {frontmatter.date}
+          <span style={{ fontSize: "14px", marginLeft: "10px", color: "var(--color-high)" }}>· {frontmatter.category}</span>
+        </p>
       </div>
       {/* 포스트 본문 */}
       <div dangerouslySetInnerHTML={{ __html: html }} />

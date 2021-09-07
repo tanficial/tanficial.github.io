@@ -93,7 +93,7 @@ const HeaderWrapper = styled.div`
     display: flex;
     justify-content: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px 20px;
     border: none;
     h1{
       font-size: 1.5rem;
@@ -119,7 +119,9 @@ const Header = ({ curCategory }) => {
   const headroom = useRef(null);
   const data = useStaticQuery(graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___category], order: ASC }
+    ) {
       edges {
         node {
           frontmatter {
@@ -149,8 +151,8 @@ const Header = ({ curCategory }) => {
         <ButtonsWrapper>
           {
             isMenuOpened
-              ? <VscChromeClose onClick={() => setIsMenuOpened(false)} />
-              : <VscMenu onClick={() => setIsMenuOpened(true)} />
+              ? <VscChromeClose style={{ fontSize: "22px" }} onClick={() => setIsMenuOpened(false)} />
+              : <VscMenu style={{ fontSize: "22px" }} onClick={() => setIsMenuOpened(true)} />
           }
         </ButtonsWrapper>
       </HeaderWrapper>

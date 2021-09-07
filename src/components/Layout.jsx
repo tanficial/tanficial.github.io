@@ -41,7 +41,7 @@ const StyledLayout = styled.div`
     > div {
       clear: both;
       width: 100%;
-      margin-top: 95px;
+      margin-top: 60px;
       min-height: calc(100vh - 195px);
       padding: 0 20px;
     }
