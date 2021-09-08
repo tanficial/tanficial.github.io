@@ -7,7 +7,7 @@ const StyledCard = styled.article`
     background-color: var(--color-card);
     border-radius: 8px;
     padding: 15px 10px;
-    transition: transform 100ms ease-in-out;
+    box-sizing: border-box;
     h2 {
         margin: 10px 0;
         color: var(--color-high);
@@ -18,8 +18,11 @@ const StyledCard = styled.article`
         margin: 10px 0;
         line-height: 20px;
     }
-    :hover {
-        transform: scale(1.02);
+    &:hover {
+        h2 {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
     }
 
     @media screen and (max-width: 1100px) {
@@ -29,16 +32,16 @@ const StyledCard = styled.article`
 
 const PostCard = ({ slug, frontmatter }) => {
     return (
-        <StyledCard>
-            <Link to={slug}>
+        <Link to={slug}>
+            <StyledCard>
                 <div>
                     <h2>{frontmatter.title}</h2>
                     <span style={{ fontSize: "14px" }}>{frontmatter.date}</span>
                     <span style={{ fontSize: "14px", marginLeft: "10px", color: "var(--color-high)" }}>· {frontmatter.category}</span>
                     <p>{frontmatter.description}</p>
                 </div>
-            </Link>
-        </StyledCard>
+            </StyledCard>
+        </Link>
     )
 }
 
