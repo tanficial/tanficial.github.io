@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://tanficial.github.io/",
     title: "tanficial-blog",
   },
   plugins: [
