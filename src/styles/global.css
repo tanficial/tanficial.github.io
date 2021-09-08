@@ -17,7 +17,6 @@ a:hover {
 }
 
 blockquote {
-    /* 추후 작성 */
     color: inherit;
     border-color: var(--color-high);
 }
@@ -25,4 +24,9 @@ blockquote {
 img {
     display: block;
     margin: 0 auto;
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+    z-index: 2;
 }

@@ -54,7 +54,6 @@ module.exports = {
               linkImagesToOriginal: false,
             }
           },
-          "gatsby-remark-images-medium-zoom",
           {
             resolve: `gatsby-remark-emojis`,
             options: {

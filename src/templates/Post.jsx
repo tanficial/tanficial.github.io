@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
+import mediumZoom from 'medium-zoom';
 
 import Layout from "../components/Layout"
 
@@ -10,6 +11,15 @@ const postHeadStyle = {
 
 function Post({ data }) { // this prop(data) will be injected by the GraphQL query we'll write in a bit
   const { markdownRemark: { html, frontmatter } } = data; // data.markdownRemark holds your html, frontmatter data
+  const content = useRef();
+
+  useEffect(() => {
+    const urlImgs = content.current.querySelectorAll("img");
+    mediumZoom(urlImgs, {
+      background: '#222831f0',
+      scrollOffset: 0,
+    });
+  }, []);
 
   return (
     <Layout category={frontmatter.category}>
@@ -22,7 +32,7 @@ function Post({ data }) { // this prop(data) will be injected by the GraphQL que
         </p>
       </div>
       {/* 포스트 본문 */}
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }
