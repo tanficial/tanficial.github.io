@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     --color-bg: #222831;
     --color-card: #393e46;

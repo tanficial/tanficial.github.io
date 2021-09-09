@@ -42,7 +42,14 @@ module.exports = {
       options: {
         plugins: [
           "gatsby-remark-embed-video",
-          "gatsby-remark-autolink-headers",
+          {
+            resolve: "gatsby-remark-autolink-headers",
+            options: {
+              className: "anchor-header",
+              maintainCase: false,
+              elements: ['h2', 'h3'],
+            }
+          },
           "gatsby-remark-prismjs",
           "gatsby-remark-responsive-iframe",
           "gatsby-remark-copy-linked-files",
