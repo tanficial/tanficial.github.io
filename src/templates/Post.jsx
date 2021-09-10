@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import mediumZoom from 'medium-zoom';
 
 import Layout from "../components/Layout"
+import Comment from "../components/Comment"
 
 const TableofContents = styled.div`
   position: absolute;
@@ -95,6 +96,8 @@ function Post({ data }) { // this prop(data) will be injected by the GraphQL que
       </TableofContents>
       {/* 포스트 본문 */}
       <div ref={content} dangerouslySetInnerHTML={{ __html: html }} />
+      {/* 댓글 */}
+      <Comment />
     </Layout>
   )
 }
