@@ -17,7 +17,7 @@ const StyledLayout = styled.div`
   > div {
     float: right;
     width: calc(100% - 280px);
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 108px);
     box-sizing: border-box;
     padding: 30px 50px;
   }
