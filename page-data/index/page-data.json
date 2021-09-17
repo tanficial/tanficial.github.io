@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-index-jsx",
+    "path": "/",
+    "result": {"data":{"allMarkdownRemark":{"edges":[{"node":{"id":"35890ddb-4164-5263-993f-eb6d1c599e44","fields":{"slug":"/DataScience/2021-09-17/"},"frontmatter":{"title":"[웹소설 데이터 분석 프로젝트] 1. 수집할 데이터","category":"DataScience","date":"September. 17. 2021","description":"네이버 시리즈의 웹 소설 데이터를 수집, 분석해 보는 미니 프로젝트"}}},{"node":{"id":"606b8cb9-02d5-5c86-bcd9-d18de8058bdd","fields":{"slug":"/DataScience/2021-09-16/"},"frontmatter":{"title":"[웹소설 데이터 분석 프로젝트] Intro. 소개","category":"DataScience","date":"September. 16. 2021","description":"네이버 시리즈의 웹 소설 데이터를 수집, 분석해 보는 미니 프로젝트"}}},{"node":{"id":"78416e74-9441-5f6a-a71e-3044e30fa69b","fields":{"slug":"/Project/2021-09-13/"},"frontmatter":{"title":"[Gatsby] 블로그 제작 후기","category":"Project","date":"September. 13. 2021","description":"React와 Gatsby로 블로그를 만들었습니다."}}}]}},"pageContext":{}},
+    "staticQueryHashes": ["2966679358"]}
